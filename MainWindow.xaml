@@ -1,0 +1,24 @@
+﻿<Window x:Class="Lab_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab_2"
+        xmlns:views="clr-namespace:Lab_2.Views"
+        xmlns:vms="clr-namespace:Lab_2.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800">
+    <Grid>
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type vms:AddPatientViewModel}">
+                <views:AddPatient/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vms:PatientListingViewModel}">
+                <views:PatientListingView/>
+            </DataTemplate>
+        </Grid.Resources>
+
+        <ContentControl Content="{Binding CurrentViewModel}"></ContentControl>
+    </Grid>
+</Window>
